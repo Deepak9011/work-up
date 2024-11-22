@@ -34,6 +34,24 @@ function SlideBar(props) {
         >
           <a>Add Categories</a>
         </li>
+        <li
+          className={active === 'addSubCategories' ? 'active' : ''}
+          onClick={() => handleClick('addSubCategories')}
+        >
+          <a>Add SubCategories</a>
+        </li>
+        <li
+          className={active === 'addTask' ? 'active' : ''}
+          onClick={() => handleClick('addTask')}
+        >
+          <a>Add Task</a>
+        </li>
+        <li
+          className={active === 'updateCategory' ? 'active' : ''}
+          onClick={() => handleClick('updateCategory')}
+        >
+          <a>Update Category</a>
+        </li>
       </ul>
 
       <h6>Service Provider</h6>

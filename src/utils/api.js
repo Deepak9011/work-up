@@ -16,11 +16,11 @@ export async function getCategories(setState) {
 }
 
 
-export async function addCategory(setState, values) {
+export async function addCategory(setState, categories_name, categories_img) {
   try {
     const input = {
-      category_name: "Check",
-      image: "hello", // Assuming the API accepts image as a base64 string or URL
+      category_name: categories_name,
+      image: categories_img, // Assuming the API accepts image as a base64 string or URL
   };
 
 

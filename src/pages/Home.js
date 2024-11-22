@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import AddCategories from '../components/categories/AddCategories';
+import AddSubCategory from '../components/categories/AddSubCategories';
+import AddTask from '../components/categories/AddTask';
 import AllCategories from '../components/categories/AllCategories';
+import UpdateCategory from '../components/categories/UpdateCategory';
 import AllCustomers from '../components/customer/AllCustomer';
 import RemoveCustomer from '../components/customer/RemoveCustomer';
 import Footer from '../components/Footer';
@@ -22,6 +25,12 @@ function Home() {
                 return <AllCategories />
             case 'addCategories':
                 return <AddCategories/>
+            case 'addSubCategories':
+                return <AddSubCategory/>
+            case 'addTask':
+                return <AddTask/>
+            case 'updateCategory':
+                return <UpdateCategory/>
             case 'allServiceProviders':
                 return <AllServiceProviders/>
             case 'removeServiceProvider':
