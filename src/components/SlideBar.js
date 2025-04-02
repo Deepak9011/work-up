@@ -85,6 +85,22 @@ function SlideBar(props) {
           <a>Remove Customer</a>
         </li>
       </ul>
+
+      <h6>Bid</h6>
+      <ul>
+        <li
+          className={active === 'getAllBid' ? 'active' : ''}
+          onClick={() => handleClick('Get All Bid')}
+        >
+          <a>Get All Bids</a>
+        </li>
+        <li
+          className={active === 'serviceProviderBid' ? 'active' : ''}
+          onClick={() => handleClick('serviceProviderBid')}
+        >
+          <a>Service Provider Total Bid</a>
+        </li>
+      </ul>
     </div>
   );
 }

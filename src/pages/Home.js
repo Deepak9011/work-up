@@ -11,6 +11,7 @@ import NavBar from '../components/NavBar';
 import AllServiceProviders from '../components/service_provider/AllServiceProvider';
 import RemoveServiceProvider from '../components/service_provider/RemoveServiceProvider';
 import SlideBar from '../components/SlideBar';
+import Bid from './Bid';
 import Dashboard from './DashBoard';
 
 function Home() {
@@ -39,6 +40,8 @@ function Home() {
                 return <AllCustomers/>
             case 'removeCustomer':
                 return <RemoveCustomer/>
+            case 'bid':
+                return <Bid/>
             default:
                 return <Dashboard />;
         }
