@@ -12,6 +12,7 @@ import AllServiceProviders from '../components/service_provider/AllServiceProvid
 import RemoveServiceProvider from '../components/service_provider/RemoveServiceProvider';
 import SlideBar from '../components/SlideBar';
 import Bid from './Bid';
+import BidCreatedDetails from './BidCreatedDetails';
 import Dashboard from './DashBoard';
 
 function Home() {
@@ -40,12 +41,30 @@ function Home() {
                 return <AllCustomers/>
             case 'removeCustomer':
                 return <RemoveCustomer/>
-            case 'bid':
+            case '':
                 return <Bid/>
             default:
                 return <Dashboard />;
         }
     };
+
+    const sampleBidData = {
+        bidId: 'BID12345',
+        serviceProviderid: 'SP98765',
+        startBidTime: '2023-05-15T09:00:00',
+        endBidTime: '2023-05-20T17:00:00',
+        serviceTime: '2023-05-25T10:00:00',
+        category: 'Plumbing',
+        description: 'Fix leaking pipes in kitchen',
+        maxAmount: 250.00,
+        address: '123 Main St, Anytown, USA',
+        additionalNotes: 'Need to be done before noon',
+        image: {
+          img1: { url: '/images/pipe-leak.jpg', altText: 'Leaking pipe' },
+          img2: { url: '/images/kitchen-sink.jpg', altText: 'Kitchen area' }
+        },
+        status: 'active'
+      };
 
 
     return (
@@ -60,6 +79,7 @@ function Home() {
                     {renderContent()}
                 </main>
             </div>
+            <BidCreatedDetails bidData={sampleBidData} />
             <Footer/>
         </div>
     );
