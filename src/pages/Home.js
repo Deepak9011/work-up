@@ -80,7 +80,7 @@ function Home() {
                     {renderContent()}
                 </main>
             </div>
-            <AllSubCategories/>
+            {/* <AllSubCategories/> */}
             {/* <BidCreatedDetails bidData={sampleBidData} /> */}
             <Footer/>
         </div>

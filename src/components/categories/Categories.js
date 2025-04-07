@@ -30,7 +30,7 @@ function Categories() {
                 {/* <div className="sidebar col-md-3">
                     <SlideBar onSelect={setSelected} />
                 </div> */}
-                <main className="col-md-9">
+                <main className="">
                     {/* <h1>Hello</h1> */}
                     {renderCategoriesContent()}
                 </main>
