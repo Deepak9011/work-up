@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import GetAllBids from '../components/bid/GetAllBids';
 import AddCategories from '../components/categories/AddCategories';
 import AddSubCategory from '../components/categories/AddSubCategories';
 import AddTask from '../components/categories/AddTask';
 import AllCategories from '../components/categories/AllCategories';
+import AllSubCategories from '../components/categories/AllSubCategories';
 import UpdateCategory from '../components/categories/UpdateCategory';
 import AllCustomers from '../components/customer/AllCustomer';
 import RemoveCustomer from '../components/customer/RemoveCustomer';
@@ -11,8 +13,6 @@ import NavBar from '../components/NavBar';
 import AllServiceProviders from '../components/service_provider/AllServiceProvider';
 import RemoveServiceProvider from '../components/service_provider/RemoveServiceProvider';
 import SlideBar from '../components/SlideBar';
-import Bid from './Bid';
-import BidCreatedDetails from './BidCreatedDetails';
 import Dashboard from './DashBoard';
 
 function Home() {
@@ -41,8 +41,8 @@ function Home() {
                 return <AllCustomers/>
             case 'removeCustomer':
                 return <RemoveCustomer/>
-            case '':
-                return <Bid/>
+            case 'getAllBid':
+                return <GetAllBids/>
             default:
                 return <Dashboard />;
         }
@@ -79,6 +79,7 @@ function Home() {
                     {renderContent()}
                 </main>
             </div>
+            <AllSubCategories/>
             <BidCreatedDetails bidData={sampleBidData} />
             <Footer/>
         </div>
