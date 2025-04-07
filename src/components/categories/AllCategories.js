@@ -4,7 +4,8 @@ import { getCategories } from '../../utils/api';
 import './AllCategories.css';
 
 function AllCategories(props) {
-  const [categories, setCategories] = useState([
+  const {setCurrCategoriesState, setCategories} = props;
+  const [categoriesData, setCategoriesData] = useState([
     {
         "_id": "66f4e7718399773491ed44a8",
         "category_name": "House Cleaning",
@@ -67,7 +68,7 @@ function AllCategories(props) {
     const fetchCategories = async () => {
       setIsLoading(true);
       try {
-        await getCategories(setCategories);
+        await getCategories(setCategoriesData);
         setError(null);
       } catch (err) {
         setError('Error fetching categories. Please try again later.');
@@ -78,6 +79,14 @@ function AllCategories(props) {
 
     fetchCategories();
   }, []);  
+
+  const handleArrowClick = (category) => {
+    // Update the current categories state to show subcategories
+    setCurrCategoriesState("subCategories");
+    // You might also want to set the current category in the parent component
+    // if you need to know which category was clicked
+    setCategories(category);
+  };
 
   if (isLoading) {
     return (
@@ -95,7 +104,7 @@ function AllCategories(props) {
   return (
     <div className="categories-container">
       <h2>All Categories</h2>
-      {categories.length > 0 ? (
+      {categoriesData.length > 0 ? (
         <table className="categories-table">
           <thead>
             <tr>
@@ -107,7 +116,7 @@ function AllCategories(props) {
             </tr>
           </thead>
           <tbody>
-            {categories.map((category) => (
+            {categoriesData.map((category) => (
               <tr key={category._id}>
                 <td>{category._id}</td>
                 <td>{category.category_name}</td>
@@ -119,7 +128,12 @@ function AllCategories(props) {
                   />
                 </td>
                 <td>{category.category_id}</td>
-                <td><FiChevronRight className="arrow-icon"/></td>
+                <td><button 
+                    onClick={() => handleArrowClick(category)}
+                    className="arrow-button"
+                  >
+                    <FiChevronRight className="arrow-icon"/>
+                  </button></td>
               </tr>
             ))}
           </tbody>
@@ -132,93 +146,3 @@ function AllCategories(props) {
 }
 
 export default AllCategories;
-
-// import React, { useEffect, useState } from 'react';
-// import { getCategories } from '../../utils/api';
-// import Card from './Card';
-
-// // Categories.js
-// function AllCategories() {
-//   const [categories, setCategories] = useState([]); 
-//   const [isLoading, setIsLoading] = useState(true);  
-//   const [error, setError] = useState(null);
-
-//   useEffect(() => {
-//     const fetchCategories = async () => {
-//       try {
-//         await getCategories(setCategories);
-//       } catch (err) {
-//         setError('Error fetching categories');
-//       }
-//     };
-
-//     fetchCategories();
-//   }, []);  
-
-//   useEffect(() => {
-//     const delayRender = setTimeout(() => {
-//       if (categories !== 0) {
-//         setIsLoading(false);
-//       } 
-//       else {
-//         getCategories(setCategories); 
-//       }
-//     }, 3000); 
-
-//     return () => clearTimeout(delayRender);
-//   }, [isLoading]);
-//   if (isLoading) {
-//     return <p>Loading...</p>;  
-//   }
-
-//   if (error) {
-//     return <p>{error}</p>; 
-//   }
-
-//   // useEffect(() => {
-//   //   await getCategories(setCategories);
-//   //   setIsLoading(false);
-//   // }, [])
-
-//   // return (
-//   //   <>
-//   //       <h2>All Categories</h2>
-//   //       <Card title = {categories[0].category_name} imageUrl = "https://res.cloudinary.com/deeqsba43/image/upload/v1730733116/workup/categories/c0fkevsrpfxkf8yzzn0i.webp"/>
-//   //   </>
-//   // );
-//   function categoriesLoaded() {
-//     return (
-//       <>
-//         {categories.length > 0 ? (
-//         categories.map((category, index) => (
-//           <Card
-//             title={category.category_name}
-//             imageUrl={category.image_url || 'default-image-url'} 
-//           />
-//         ))
-//       ) : (
-//         <p>No categories available.</p>  
-//       )}
-//       </>
-//     );
-//   }
-
-//   return (
-//     <>
-//       <h2>All Categories</h2>
-//       <main className='categories'>
-//         <section>
-//           {categories ? (
-//             categoriesLoaded()
-//           ) : (
-//             <div className='spinner-container'>
-//               <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-//             </div>
-//           )}
-//         </section>
-//       </main>
-//     </>
-//   );
-// }
-
-// export default AllCategories;

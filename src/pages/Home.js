@@ -3,7 +3,6 @@ import GetAllBids from '../components/bid/GetAllBids';
 import AddCategories from '../components/categories/AddCategories';
 import AddSubCategory from '../components/categories/AddSubCategories';
 import AddTask from '../components/categories/AddTask';
-import AllCategories from '../components/categories/AllCategories';
 import AllSubCategories from '../components/categories/AllSubCategories';
 import UpdateCategory from '../components/categories/UpdateCategory';
 import AllCustomers from '../components/customer/AllCustomer';
@@ -14,6 +13,7 @@ import AllServiceProviders from '../components/service_provider/AllServiceProvid
 import RemoveServiceProvider from '../components/service_provider/RemoveServiceProvider';
 import SlideBar from '../components/SlideBar';
 import Dashboard from './DashBoard';
+import Categories from '../components/categories/Categories';
 
 function Home() {
 
@@ -24,7 +24,8 @@ function Home() {
             case 'dashboard':
                 return <Dashboard />;
             case 'allCategories':
-                return <AllCategories />
+                return <Categories/>
+                // return <AllCategories />
             case 'addCategories':
                 return <AddCategories/>
             case 'addSubCategories':
@@ -80,7 +81,7 @@ function Home() {
                 </main>
             </div>
             <AllSubCategories/>
-            <BidCreatedDetails bidData={sampleBidData} />
+            {/* <BidCreatedDetails bidData={sampleBidData} /> */}
             <Footer/>
         </div>
     );

@@ -1,5 +1,4 @@
 import React from 'react';
-import './Card';
 
 function Card(props) {
     return (
