@@ -7,7 +7,7 @@ import AllSubCategories from '../components/categories/AllSubCategories';
 import UpdateCategory from '../components/categories/UpdateCategory';
 import AllCustomers from '../components/customer/AllCustomer';
 import RemoveCustomer from '../components/customer/RemoveCustomer';
-import Footer from '../components/Footer';
+// import Footer from '../components/Footer';
 import NavBar from '../components/NavBar';
 import AllServiceProviders from '../components/service_provider/AllServiceProvider';
 import RemoveServiceProvider from '../components/service_provider/RemoveServiceProvider';
@@ -82,7 +82,7 @@ function Home() {
             </div>
             {/* <AllSubCategories/> */}
             {/* <BidCreatedDetails bidData={sampleBidData} /> */}
-            <Footer/>
+            {/* <Footer/> */}
         </div>
     );
 }

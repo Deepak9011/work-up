@@ -1,3 +1,5 @@
+import './NavBar.css';
+
 function NavBar(props) {
     return (
         <div>
