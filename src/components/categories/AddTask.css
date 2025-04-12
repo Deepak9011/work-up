@@ -1,0 +1,88 @@
+.task-form-container {
+  background-color: #f9f9ff;
+  padding: 30px;
+  border-radius: 16px;
+  max-width: 700px;
+  margin: 40px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.task-form-container h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.task-form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.task-form-container input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.task-form-container input:focus {
+  border-color: #4b7bec;
+  outline: none;
+}
+
+.task-form-container button {
+  padding: 12px;
+  background-color: #4b7bec;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.task-form-container button:hover {
+  background-color: #3867d6;
+}
+
+.task-table {
+  margin-top: 40px;
+}
+
+.task-table h3 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.task-table table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.task-table th,
+.task-table td {
+  padding: 14px 16px;
+  text-align: left;
+}
+
+.task-table th {
+  background-color: #4b7bec;
+  color: #fff;
+  font-weight: 600;
+}
+
+.task-table tr:nth-child(even) {
+  background-color: #f1f5f9;
+}
+
+.task-table tr:hover {
+  background-color: #e2e8f0;
+  transition: background-color 0.2s ease-in-out;
+}

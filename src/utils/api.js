@@ -45,20 +45,7 @@ export async function addCategory(setState, categories_name, categories_img) {
   }
 }
 
-export async function addSubCategory(setState) {
-  try {
-    const url = API_URL + `/categories/addSubcategory`;
-    const resp = await fetch(url);
-    const data = await resp.json();
-    console.log(data[2].category_name);
-  // data.forEach((data) => {
-  //     console.log(data.category_name);
-  //   });
-    setState(data)
-  } catch(err) {
-    console.error(err)
-  }
-}
+
 
 export async function addTask(setState) {
   try {
@@ -132,3 +119,36 @@ export async function updateSubcategory(setState) {
 //     console.error(err)
 //   }
 // }
+
+export const getTasks = async (category_id, subcategory_id) => {
+  const encodedData = new URLSearchParams();
+  encodedData.append('category_id', category_id);
+  encodedData.append('subcategory_id', subcategory_id);
+
+  try {
+    const res = await fetch(`${API_URL}/categories/getTask`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: encodedData.toString()
+    });
+
+    const data = await res.json();
+    return data;
+  } catch (err) {
+    console.error('Error fetching tasks:', err);
+    return [];
+  }
+};
+
+
+
+
+
+
+
+
+
+
+
