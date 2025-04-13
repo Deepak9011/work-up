@@ -15,6 +15,8 @@ import SlideBar from '../components/SlideBar';
 import Dashboard from './DashBoard';
 import Categories from '../components/categories/Categories';
 
+
+
 function Home() {
 
     const [selected, setSelected] = useState('dashboard');

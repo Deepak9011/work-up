@@ -11,7 +11,7 @@ function AllSubCategories(props) {
   const { categoryId } = useParams();
 
   const [categoryData, setCategoryData] = useState({
-        "_id": "66f4e82f8399773491ed44b0",
+        "_id": "66f4e82f839977349A1ed44b0",
         "category_name": "Cooking",
         "image_url": "https://res.cloudinary.com/deeqsba43/image/upload/v1730733116/workup/categories/c0fkevsrpfxkf8yzzn0i.webp",
         "image_id": "workup/categories/c0fkevsrpfxkf8yzzn0i",
