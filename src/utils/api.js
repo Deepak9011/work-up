@@ -142,8 +142,17 @@ export const getTasks = async (category_id, subcategory_id) => {
   }
 };
 
-
-
+export async function getCustomers(setState) {
+  try {
+    const url = API_URL + `/customers/getCategories`;
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log(data); // You can adjust this to data[2] if needed
+    setState(data);
+  } catch (err) {
+    console.error('Error fetching customers:', err);
+  }
+}
 
 
 

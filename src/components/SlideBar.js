@@ -90,7 +90,7 @@ function SlideBar(props) {
       <ul>
         <li
           className={active === 'getAllBid' ? 'active' : ''}
-          onClick={() => handleClick('Get All Bid')}
+          onClick={() => handleClick('getAllBid')}
         >
           <a>Get All Bids</a>
         </li>

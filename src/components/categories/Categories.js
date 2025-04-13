@@ -9,6 +9,7 @@ function Categories() {
     const [subCategories, setSubCategories] = useState('9d8c3cd6-7a65-4d4a-a2ea-4df6be56ca7f');
     const [subTask, setsubTask] = useState('9d8c3cd6-7a65-4d4a-a2ea-4df6be56ca7f');
     const [currCategoriesState, setCurrCategoriesState] = useState('categories');
+   
 
     const renderCategoriesContent = () => {
         switch (currCategoriesState) {
